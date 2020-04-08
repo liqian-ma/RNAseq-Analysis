@@ -6,3 +6,5 @@ RNAseq processing
 5.	Download cDNA fasta file of mouse using command `wget ftp://ftp.ensembl.org/pub/release-96/fasta/mus_musculus/cdna/Mus_musculus.GRCm38.cdna.all.fa.gz`
 6.	Build index using command line `module load kallisto` (this may be needed when running on a cluster environment) and `kallisto index -i Mus_musculus.GRC.index Mus_musculus.GRCm38.cdna.all.fa.gz`
 7.	Run pseudoalignment and abundance quantification using Kallisto on all fastq.gz files and save the output to invidual folders by sample  `xargs -I{} kallisto quant -i ../index/Mus_musculus.GRC.index -o ../kall_out_1/{}/ --single -l 140 -s 41.44 {}.fastq.gz < names.txt`
+
+Note: this workflow was based on Kallisto v0.44.0
