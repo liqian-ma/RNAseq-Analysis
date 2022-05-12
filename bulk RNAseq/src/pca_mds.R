@@ -19,6 +19,7 @@ library(WGCNA)
 # Dimensionality reduction ------------------------------------------------
 
 pc_data = as.data.frame(lcpm[, c(1:11, 22:26)])
+pc_data = t(scale(t(pc_data)))
 rna_pca = prcomp(x = t(pc_data))
 
 varExp = (100*rna_pca$sdev^2)/sum(rna_pca$sdev^2)
